@@ -12,9 +12,11 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import frc.robot.commands.Drive;
 import frc.robot.commands.IndexLow;
 import frc.robot.commands.IndexUpper;
+import frc.robot.commands.RevIndexUpper;
 import frc.robot.commands.ShootHigh;
 import frc.robot.commands.ShootLow;
 import frc.robot.commands.TakeIn;
+import frc.robot.commands.TakeOut;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.LowerIndexer;
@@ -87,12 +89,17 @@ public class RobotContainer {
   private void configureButtonBindings() {
     driveTrain.setDefaultCommand( new Drive() );
 
-    j1.b1.whenPressed( new InstantCommand( () -> pistons.toggle() ) ); 
+    j1.b1.whenPressed( new InstantCommand( () -> pistons.extend() ) ); 
     j1.b1.whileHeld(new TakeIn() ); 
-    j1.b1.whenReleased( new InstantCommand( () -> pistons.toggle() ) ); 
+    j1.b1.whenReleased( new InstantCommand( () -> pistons.retract() ) ); 
+
+    j0.b1.whenPressed( new InstantCommand( () -> pistons.extend() ) ); 
+    j0.b1.whileHeld( new TakeOut() );
+    j0.b1.whenReleased( new InstantCommand( () -> pistons.retract() ) ); 
 
     c0.lBumper.whileHeld( new IndexLow() ); 
     c0.rBumper.whileHeld(new IndexUpper()); 
+    c0.x.whileHeld(new RevIndexUpper() );
 
     c0.a.whenPressed( new InstantCommand( () -> pistons2.toggle() ) ); 
 

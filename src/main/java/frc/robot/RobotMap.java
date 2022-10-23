@@ -8,6 +8,7 @@ public class RobotMap {
 
     public static final int SPARK_ID = 33;
     public static final double INTAKE_SPEED = 1.0; 
+    public static final double OUTTAKE_SPEED = -1.0; 
 
     public static final int LOWER_INDEXER_ID = 22; 
     public static final double LOWER_INDEXER_SPEED = -0.5; 

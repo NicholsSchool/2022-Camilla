@@ -13,9 +13,11 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    public static final double HIGH_GOAL_VELOCITY = 15000.0;
-    public static final double LOW_GOAL_VELOCITY = 7200; 
+    public static final double HIGH_GOAL_VELOCITY = 18000.0;
+    public static final double LOW_GOAL_VELOCITY = 10.0; 
     public static final double INDEXER_SPEED = 1.0;
     public static final double SHOOTER_SPEED = 1.0; 
 
+    public static final boolean INTAKE_IN = false;
+    public static final boolean INTAKE_OUT = true;
 }

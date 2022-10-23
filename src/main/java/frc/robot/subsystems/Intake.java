@@ -20,8 +20,6 @@ public class Intake extends SubsystemBase {
         intake.restoreFactoryDefaults();
 
         intake.setInverted( false );
-
-
     }
 
     public void move( double speed )
